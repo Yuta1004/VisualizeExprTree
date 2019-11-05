@@ -1,10 +1,6 @@
 /* 管理ノード追加 */
 void addNode(Node node) {
-    int key;
-    do {
-        key = (int)random(0, 1024);
-    } while(nodeMap.get(key) != null);
-    nodeMap.put(key, node);
+    nodeList.add(node);
 }
 
 /* ノード連結処理 */
@@ -20,8 +16,8 @@ void chainNode(int newPressNodePl, int newPressNodeID) {
     if((oldPressNodePl & NCENTER) != NCENTER && (newPressNodePl & NCENTER) != NCENTER){
         oldPressNodePl = 0;
         oldPressNodeID = 0;
-        nodeMap.get(oldPressNodeID).release();
-        nodeMap.get(newPressNodeID).release();
+        nodeList.get(oldPressNodeID).release();
+        nodeList.get(newPressNodeID).release();
         return;
     }
 
@@ -33,8 +29,8 @@ void chainNode(int newPressNodePl, int newPressNodeID) {
     }
 
     // 親に殺を設定する
-    Node parent = nodeMap.get(oldPressNodeID);
-    Node child = nodeMap.get(newPressNodeID);
+    Node parent = nodeList.get(oldPressNodeID);
+    Node child = nodeList.get(newPressNodeID);
     parent.release();
     child.release();
     if((oldPressNodePl & NLEFT) == NLEFT)

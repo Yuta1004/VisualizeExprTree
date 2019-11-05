@@ -1,12 +1,13 @@
 void mousePressed() {
     // 今回押した場所を特定
-    int newPressNodePl = 0, newPressNodeID = 0;
-    for(int key : nodeMap.keySet()) {
-        newPressNodePl = nodeMap.get(key).click(mouseX, mouseY);
+    int newPressNodePl = 0, newPressNodeID = 0, idx = 0;
+    for(Node node : nodeList) {
+        newPressNodePl = node.click(mouseX, mouseY);
         if(newPressNodePl > 0){
-            newPressNodeID = key;
+            newPressNodeID = idx;
             break;
         }
+        ++ idx;
     }
     oldMouseX = mouseX;
     oldMouseY = mouseY;
@@ -23,7 +24,7 @@ void mouseDragged() {
     // ノード移動
     if(holdNodeID == -1)
         return;
-    nodeMap.get(holdNodeID).movePos(mouseX-oldMouseX, mouseY-oldMouseY);
+    nodeList.get(holdNodeID).movePos(mouseX-oldMouseX, mouseY-oldMouseY);
     oldMouseX = mouseX;
     oldMouseY = mouseY;
 }

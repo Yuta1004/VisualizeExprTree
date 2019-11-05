@@ -1,5 +1,5 @@
 import g4p_controls.*;
-import java.util.HashMap;
+import java.util.ArrayList;
 
 static final int NCENTER = 8;
 static final int NLEFT = 4;
@@ -7,17 +7,17 @@ static final int NRIGHT = 2;
 static final int NBODY = 1;
 
 int holdNodeID, oldMouseX, oldMouseY, oldPressNodePl, oldPressNodeID;
-HashMap<Integer, Node> nodeMap;
+ArrayList<Node> nodeList;
 
 void setup() {
     frameRate(25);
     size(1200, 800);
 
     holdNodeID = -1;
-    nodeMap = new HashMap<Integer, Node>();
+    nodeList = new ArrayList<Node>();
     RootNode rnode = new RootNode();
     rnode.setPos(350, 100);
-    nodeMap.put(0, rnode);
+    nodeList.add(rnode);
 
     GButton add = new GButton(this, 850, 50, 130, 100, "ADD");
     GButton sub = new GButton(this, 1020, 50, 130, 100, "SUB");
@@ -40,8 +40,8 @@ void draw() {
     rect(820, 20, 360, 760);
 
     // ノード
-    for(int key : nodeMap.keySet())
-        nodeMap.get(key).draw();
+    for(Node node : nodeList)
+        node.draw();
 }
 
 /* mouse_func.pde */
