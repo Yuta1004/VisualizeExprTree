@@ -45,6 +45,12 @@ public abstract class Node {
                 || this.selectC || this.selectL || this.selectR;
     }
 
+    public void release() {
+        this.selectC = false;
+        this.selectL = false;
+        this.selectR = false;
+    }
+
     public void reset() {
         this.val = 0;
         this.pos = null;
