@@ -43,6 +43,7 @@ public abstract class Node {
         textAlign(CENTER);
         textSize(32);
         text(vname, pos.x+100, pos.y+65);
+        textAlign(LEFT);
     }
 
     public Pos getPos() {
