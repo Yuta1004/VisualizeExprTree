@@ -8,6 +8,9 @@ void setup() {
 
     holdNodeID = -1;
     nodeMap = new HashMap<Integer, Node>();
+    RootNode rnode = new RootNode();
+    rnode.setPos(350, 100);
+    nodeMap.put(0, rnode);
 }
 
 void draw() {
