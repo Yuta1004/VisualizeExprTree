@@ -16,6 +16,10 @@ void setup() {
     RootNode rnode = new RootNode();
     rnode.setPos(350, 100);
     nodeMap.put(0, rnode);
+
+    Node add = new AddNode();
+    add.setPos(400, 400);
+    nodeMap.put(1, add);
 }
 
 void draw() {
@@ -55,12 +59,20 @@ void mousePressed() {
         oldPressNodeID = newPressNodeID;
         return;
     }
+    if((oldPressNodePl&NCENTER) != NCENTER && (newPressNodePl&NCENTER) != NCENTER){
+        println("error");
+        oldPressNodePl = 0;
+        oldPressNodeID = 0;
+        nodeMap.get(oldPressNodeID).release();
+        nodeMap.get(newPressNodeID).release();
+        return;
+    }
 
     // swap
     if((oldPressNodePl & NCENTER) == NCENTER) {
-        int tmp = oldPressNodePl;
-        oldPressNodePl = newPressNodePl;
-        newPressNodePl = tmp;
+        int tmp = oldPressNodeID;
+        oldPressNodeID = newPressNodeID;
+        newPressNodeID = tmp;
     }
 
     // 親に殺を設定する
