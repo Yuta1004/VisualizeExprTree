@@ -59,7 +59,7 @@ public abstract class Node {
     }
 
     private void checkSelectC(int x, int y) {
-        int cx = pos.x+50;
+        int cx = pos.x + nWidth/2;
         int cy = pos.y;
         this.selectC = abs(sq(x-cx) + sq(y-cy)) <= 5;
     }
