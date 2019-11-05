@@ -41,9 +41,9 @@ public abstract class Node {
         // 連結線
         strokeWeight(1);
         if(left != null)
-            line(pos.x+200/3, pos.y+100, left.getPos().x, left.getPos().y);
+            line(pos.x+200/3, pos.y+100, left.getTopPos().x, left.getTopPos().y);
         if(right != null)
-            line(pos.x+200/3*2, pos.y+100, right.getPos().x, right.getPos().y);
+            line(pos.x+200/3*2, pos.y+100, right.getTopPos().x, right.getTopPos().y);
 
         // NODE NAME
         fill(0);
@@ -55,6 +55,10 @@ public abstract class Node {
 
     public Pos getPos() {
         return this.pos;
+    }
+
+    public Pos getTopPos() {
+        return new Pos(this.pos.x+nWidth/2, this.pos.y);
     }
 
     public void setPos(Pos pos) {

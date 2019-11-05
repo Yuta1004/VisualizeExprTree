@@ -22,7 +22,7 @@ public class RootNode extends Node {
 
         // 連結線
         if(left != null)
-            line(pos.x+100/3, pos.y+100, left.getPos().x, left.getPos().y);
+            line(pos.x+100/3, pos.y+100, left.getTopPos().x, left.getTopPos().y);
 
         // 数値
         fill(0);
