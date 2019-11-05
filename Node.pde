@@ -4,9 +4,46 @@ public abstract class Node {
     int val, nWidth, nHeight;
     boolean selectC, selectL, selectR;
     Node left, right;
+    String vname;
 
-    public abstract void draw();
     public abstract int calc();
+
+    public void draw() {
+        // ノード本体
+        fill(255);
+        strokeWeight(2);
+        rect(pos.x, pos.y, 200, 100);
+
+        // 連結選択(上)
+        if(selectC)
+            fill(255, 100, 100);
+        else
+            fill(255);
+        strokeWeight(2);
+        ellipse(pos.x+100, pos.y, 10, 10);
+
+        // 連結選択(左)
+        if(selectL)
+            fill(255, 100, 100);
+        else
+            fill(255);
+        strokeWeight(2);
+        ellipse(pos.x+200/3, pos.y+100, 10, 10);
+
+        // 連結選択(右)
+        if(selectR)
+            fill(255, 100, 100);
+        else
+            fill(255);
+        strokeWeight(2);
+        ellipse(pos.x+200/3*2, pos.y+100, 10, 10);
+
+        // NODE NAME
+        fill(0);
+        textAlign(CENTER);
+        textSize(32);
+        text(vname, pos.x+100, pos.y+65);
+    }
 
     public Pos getPos() {
         return this.pos;
