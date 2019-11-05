@@ -19,6 +19,11 @@ public abstract class Node {
         this.pos = new Pos(x, y);
     }
 
+    public void movePos(int dx, int dy) {
+        this.pos.x += dx;
+        this.pos.y += dy;
+    }
+
     public void setVal(int val) {
         this.val = val;
     }
