@@ -1,10 +1,12 @@
 import java.util.HashMap;
 
+int holdNodeID, oldMouseX, oldMouseY;
 HashMap<Integer, Node> nodeMap;
 
 void setup() {
     size(1200, 800);
 
+    holdNodeID = -1;
     nodeMap = new HashMap<Integer, Node>();
 }
 
@@ -19,6 +21,32 @@ void draw() {
     // ノード
     for(int key : nodeMap.keySet())
         nodeMap.get(key).draw();
+}
+
+/* マウスが押された : 移動開始 */
+void mousePressed() {
+    for(int key : nodeMap.keySet()) {
+        if(nodeMap.get(key).checkHit(mouseX, mouseY)) {
+            holdNodeID = key;
+            break;
+        }
+    }
+    oldMouseX = mouseX;
+    oldMouseY = mouseY;
+}
+
+/* マウスがドラッグされた : 移動 */
+void mouseDragged() {
+    if(holdNodeID == -1)
+        return;
+    nodeMap.get(holdNodeID).movePos(mouseX-oldMouseX, mouseY-oldMouseY);
+    oldMouseX = mouseX;
+    oldMouseY = mouseY;
+}
+
+/* マウスが離された : 移動終了 */
+void mouseReleased() {
+    holdNodeID = -1;
 }
 
 void addNode(Node node) {
