@@ -27,10 +27,10 @@ public class NumNode extends Node {
 
         // 数値
         fill(0);
-        textAlign(CENTER);
+        textAlign(CENTER, CENTER);
         textSize(32);
-        text(val, pos.x+50, pos.y+65);
-        textMode(LEFT);
+        text(val, pos.x+50, pos.y+50);
+        textAlign(LEFT, LEFT);
     }
 
     int calc() {

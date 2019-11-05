@@ -40,10 +40,10 @@ public abstract class Node {
 
         // NODE NAME
         fill(0);
-        textAlign(CENTER);
+        textAlign(CENTER, CENTER);
         textSize(32);
-        text(vname, pos.x+100, pos.y+65);
-        textAlign(LEFT);
+        text(vname, pos.x+100, pos.y+50);
+        textAlign(LEFT, LEFT);
     }
 
     public Pos getPos() {
