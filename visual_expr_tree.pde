@@ -23,6 +23,11 @@ void setup() {
     GButton mul = new GButton(this, 850, 170, 130, 100, "MUL");
     GButton div = new GButton(this, 1020, 170, 130, 100, "DIV");
     GButton num = new GButton(this, 850, 290, 130, 100, "NUM");
+    add.tag = "ADD";
+    sub.tag = "SUB";
+    mul.tag = "MUL";
+    div.tag = "DIV";
+    num.tag = "NUM";
 }
 
 void draw() {
