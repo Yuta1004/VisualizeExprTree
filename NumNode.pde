@@ -17,7 +17,10 @@ public class NumNode extends Node {
         rect(pos.x, pos.y, 100, 100);
 
         // 選択表示
-        fill(255);
+        if(selectC)
+            fill(255, 100, 100);
+        else
+            fill(255);
         strokeWeight(2);
         ellipse(pos.x+50, pos.y, 10, 10);
 
