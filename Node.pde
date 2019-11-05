@@ -3,7 +3,7 @@ public abstract class Node {
     Pos pos;
     int val, nWidth, nHeight;
     boolean selectC, selectL, selectR;
-    private Node left, right;
+    Node left, right;
 
     public abstract void draw();
     public abstract int calc();
