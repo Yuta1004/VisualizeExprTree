@@ -1,14 +1,22 @@
 public abstract class Node {
 
-    int x, y, val;
+    Pos pos;
+    int val;
     private Node left, right;
 
     public abstract void draw();
     public abstract int calc();
 
+    public Pos getPos() {
+        return this.pos;
+    }
+
+    public void setPos(Pos pos) {
+        this.pos = pos;
+    }
+
     public void setPos(int x, int y) {
-        this.x = x;
-        this.y = y;
+        this.pos = new Pos(x, y);
     }
 
     public void setVal(int val) {
@@ -24,9 +32,8 @@ public abstract class Node {
     }
 
     public void reset() {
-        this.x = 0;
-        this.y = 0;
         this.val = 0;
+        this.pos = null;
         this.left = null;
         this.right = null;
     }
