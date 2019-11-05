@@ -68,11 +68,13 @@ public abstract class Node {
     }
 
     public void setLeft(Node left) {
-        this.left = left;
+        if(left != this)
+            this.left = left;
     }
 
     public void setRight(Node right) {
-        this.right = right;
+        if(right != this)
+            this.right = right;
     }
 
     public int click(int x, int y) {
