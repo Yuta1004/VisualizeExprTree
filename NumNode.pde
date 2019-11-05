@@ -1,10 +1,12 @@
 public class NumNode extends Node {
 
     NumNode() {
-        this.setVal(0);
+        this(0);
     }
 
     NumNode(int val) {
+        this.nWidth = 100;
+        this.nHeight = 100;
         this.setVal(val);
     }
 

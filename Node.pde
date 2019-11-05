@@ -1,7 +1,7 @@
 public abstract class Node {
 
     Pos pos;
-    int val;
+    int val, nWidth, nHeight;
     private Node left, right;
 
     public abstract void draw();
@@ -29,6 +29,10 @@ public abstract class Node {
 
     public void setRight(Node right) {
         this.right = right;
+    }
+
+    public boolean checkHit(int x, int y) {
+        return (pos.x <= x && x <= pos.x+nWidth) && (pos.y <= y && y <= pos.y+nHeight);
     }
 
     public void reset() {
