@@ -10,6 +10,7 @@ int holdNodeID, oldMouseX, oldMouseY, oldPressNodePl, oldPressNodeID;
 HashMap<Integer, Node> nodeMap;
 
 void setup() {
+    frameRate(25);
     size(1200, 800);
 
     holdNodeID = -1;
