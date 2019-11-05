@@ -49,6 +49,7 @@ void mouseReleased() {
     holdNodeID = -1;
 }
 
+/* 管理ノード追加 */
 void addNode(Node node) {
     int key;
     do {
