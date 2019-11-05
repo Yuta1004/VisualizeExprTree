@@ -1,7 +1,8 @@
-public class Node {
+public abstract class Node {
 
     private int x, y;
 
-    void draw() {}
+    public abstract void draw();
+    public abstract void calc();
 
 }
