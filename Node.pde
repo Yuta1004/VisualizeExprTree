@@ -2,6 +2,7 @@ public abstract class Node {
 
     Pos pos;
     int val, nWidth, nHeight;
+    boolean selectC, selectL, selectR;
     private Node left, right;
 
     public abstract void draw();
@@ -45,6 +46,24 @@ public abstract class Node {
         this.pos = null;
         this.left = null;
         this.right = null;
+    }
+
+    private void checkSelectC(int x, int y) {
+        int cx = pos.x+50;
+        int cy = pos.y;
+        this.selectC = abs(sq(x-cx) + sq(y-cy)) <= 5;
+    }
+
+    private void checkSelectL(int x, int y) {
+        int lcx = pos.x + nWidth/3;
+        int lcy = pos.y + nHeight;
+        this.selectL = abs(sq(x-lcx) + sq(y-rcy)) <= 5;
+    }
+
+    private void checkSelectR(int x, int y) {
+        int rcx = pos.x + nWidth/3*2;
+        int rcy = pos.y + nHeight;
+        this.selectL = abs(sq(x-rcx) + sq(y-cry)) <= 5;
     }
 
 }
