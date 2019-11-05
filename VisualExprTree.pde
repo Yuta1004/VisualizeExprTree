@@ -29,7 +29,8 @@ void draw() {
 /* マウスが押された : 移動開始 */
 void mousePressed() {
     for(int key : nodeMap.keySet()) {
-        if(nodeMap.get(key).click(mouseX, mouseY)) {
+        int ret  = nodeMap.get(key).click(mouseX, mouseY);
+        if(ret > 0) {
             holdNodeID = key;
             break;
         }

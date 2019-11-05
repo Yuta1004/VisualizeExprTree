@@ -75,12 +75,16 @@ public abstract class Node {
         this.right = right;
     }
 
-    public boolean click(int x, int y) {
+    public int click(int x, int y) {
         checkSelectC(x, y);
         checkSelectL(x, y);
         checkSelectR(x, y);
-        return (pos.x <= x && x <= pos.x+nWidth) && (pos.y <= y && y <= pos.y+nHeight)
-                || this.selectC || this.selectL || this.selectR;
+
+        int a = this.selectC ? 1 : 0;
+        int b = this.selectL ? 1 : 0;
+        int c = this.selectR ? 1 : 0;
+        int d = (pos.x <= x && x <= pos.x+nWidth) && (pos.y <= y && y <= pos.y+nHeight) ? 1 : 0;
+        return a*8 | b*4 | c*2 | d;
     }
 
     public void release() {
