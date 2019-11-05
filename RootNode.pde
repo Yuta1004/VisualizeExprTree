@@ -20,6 +20,10 @@ public class RootNode extends Node {
         strokeWeight(2);
         ellipse(pos.x+100/3, pos.y+100, 10, 10);
 
+        // 連結線
+        if(left != null)
+            line(pos.x+100/3, pos.y+100, left.getPos().x, left.getPos().y);
+
         // 数値
         fill(0);
         textAlign(CENTER, CENTER);

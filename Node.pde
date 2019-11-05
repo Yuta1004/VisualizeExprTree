@@ -38,6 +38,13 @@ public abstract class Node {
         strokeWeight(2);
         ellipse(pos.x+200/3*2, pos.y+100, 10, 10);
 
+        // 連結線
+        strokeWeight(1);
+        if(left != null)
+            line(pos.x+200/3, pos.y+100, left.getPos().x, left.getPos().y);
+        if(right != null)
+            line(pos.x+200/3*2, pos.y+100, right.getPos().x, right.getPos().y);
+
         // NODE NAME
         fill(0);
         textAlign(CENTER, CENTER);
