@@ -3,9 +3,10 @@ void setup() {
 }
 
 void draw() {
-    background(255);
+    background(170, 160, 130);
 
     // パレット
+    fill(255);
     strokeWeight(3);
     rect(820, 20, 360, 760);
 }
