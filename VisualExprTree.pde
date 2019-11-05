@@ -20,3 +20,11 @@ void draw() {
     for(int key : nodeMap.keySet())
         nodeMap.get(key).draw();
 }
+
+void addNode(Node node) {
+    int key;
+    do {
+        key = (int)random(0, 1024);
+    } while(nodeMap.get(key) != null);
+    nodeMap.put(key, node);
+}
