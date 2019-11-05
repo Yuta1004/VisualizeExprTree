@@ -5,6 +5,16 @@ void addNode(Node node) {
 
 /* ノード連結処理 */
 void chainNode(int newPressNodePl, int newPressNodeID) {
+    // swap
+    if((oldPressNodePl & NCENTER) == NCENTER) {
+        int tmp = oldPressNodeID;
+        oldPressNodeID = newPressNodeID;
+        newPressNodeID = tmp;
+        tmp = oldPressNodePl;
+        oldPressNodePl = newPressNodePl;
+        newPressNodePl = tmp;
+    }
+
     // 状態チェック
     if(newPressNodePl == 0)
         return;
@@ -19,13 +29,6 @@ void chainNode(int newPressNodePl, int newPressNodeID) {
         nodeList.get(oldPressNodeID).release();
         nodeList.get(newPressNodeID).release();
         return;
-    }
-
-    // swap
-    if((oldPressNodePl & NCENTER) == NCENTER) {
-        int tmp = oldPressNodeID;
-        oldPressNodeID = newPressNodeID;
-        newPressNodeID = tmp;
     }
 
     // 親に殺を設定する

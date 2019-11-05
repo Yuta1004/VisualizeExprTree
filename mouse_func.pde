@@ -13,7 +13,12 @@ void mousePressed() {
     oldMouseY = mouseY;
 
     // ノード連結
-    if((newPressNodePl&NBODY) == NBODY) {
+    if(newPressNodePl == 0){
+        oldPressNodePl = 0;
+        oldPressNodeID = 0;
+        return;
+    }
+    if(newPressNodePl - (newPressNodePl&NBODY) == 0) {
         holdNodeID = newPressNodeID;
         return;
     }
