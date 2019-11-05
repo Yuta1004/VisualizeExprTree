@@ -1,5 +1,10 @@
 import java.util.HashMap;
 
+static final int CENTER = 8;
+static final int LEFT = 4;
+static final int RIGHT = 2;
+static final int BODY = 1;
+
 int holdNodeID, oldMouseX, oldMouseY;
 HashMap<Integer, Node> nodeMap;
 
@@ -26,11 +31,21 @@ void draw() {
         nodeMap.get(key).draw();
 }
 
-/* マウスが押された : 移動開始 */
+/* マウスが押された */
 void mousePressed() {
     for(int key : nodeMap.keySet()) {
         int ret  = nodeMap.get(key).click(mouseX, mouseY);
-        if(ret > 0) {
+        switch(ret) {
+        case CENTER:
+            break;
+
+        case LEFT:
+            break;
+
+        case RIGHT:
+            break;
+
+        case BODY:
             holdNodeID = key;
             break;
         }
