@@ -1,9 +1,9 @@
 import java.util.HashMap;
 
-static final int CENTER = 8;
-static final int LEFT = 4;
-static final int RIGHT = 2;
-static final int BODY = 1;
+static final int NCENTER = 8;
+static final int NLEFT = 4;
+static final int NRIGHT = 2;
+static final int NBODY = 1;
 
 int holdNodeID, oldMouseX, oldMouseY;
 HashMap<Integer, Node> nodeMap;
@@ -36,16 +36,16 @@ void mousePressed() {
     for(int key : nodeMap.keySet()) {
         int ret  = nodeMap.get(key).click(mouseX, mouseY);
         switch(ret) {
-        case CENTER:
+        case NCENTER:
             break;
 
-        case LEFT:
+        case NLEFT:
             break;
 
-        case RIGHT:
+        case NRIGHT:
             break;
 
-        case BODY:
+        case NBODY:
             holdNodeID = key;
             break;
         }
