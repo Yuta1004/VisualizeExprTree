@@ -16,10 +16,6 @@ void setup() {
     RootNode rnode = new RootNode();
     rnode.setPos(350, 100);
     nodeMap.put(0, rnode);
-
-    Node add = new AddNode();
-    add.setPos(400, 400);
-    nodeMap.put(1, add);
 }
 
 void draw() {
