@@ -46,11 +46,42 @@ void mousePressed() {
             break;
         }
     }
-
-    // マウス座標更新
     oldMouseX = mouseX;
     oldMouseY = mouseY;
 
+    // ノード連結
+    if((newPressNodePl&NBODY) == NBODY) {
+        holdNodeID = newPressNodeID;
+        return;
+    }
+    chainNode(newPressNodePl, newPressNodeID);
+}
+
+/* マウスがドラッグされた : 移動 */
+void mouseDragged() {
+    if(holdNodeID == -1)
+        return;
+    nodeMap.get(holdNodeID).movePos(mouseX-oldMouseX, mouseY-oldMouseY);
+    oldMouseX = mouseX;
+    oldMouseY = mouseY;
+}
+
+/* マウスが離された : 移動終了 */
+void mouseReleased() {
+    holdNodeID = -1;
+}
+
+/* 管理ノード追加 */
+void addNode(Node node) {
+    int key;
+    do {
+        key = (int)random(0, 1024);
+    } while(nodeMap.get(key) != null);
+    nodeMap.put(key, node);
+}
+
+/* ノード連結処理 */
+void chainNode(int newPressNodePl, int newPressNodeID) {
     // 状態チェック
     if(newPressNodePl == 0)
         return;
@@ -60,7 +91,6 @@ void mousePressed() {
         return;
     }
     if((oldPressNodePl&NCENTER) != NCENTER && (newPressNodePl&NCENTER) != NCENTER){
-        println("error");
         oldPressNodePl = 0;
         oldPressNodeID = 0;
         nodeMap.get(oldPressNodeID).release();
@@ -88,27 +118,4 @@ void mousePressed() {
     // 状態リセット
     oldPressNodePl = 0;
     oldPressNodeID = 0;
-}
-
-/* マウスがドラッグされた : 移動 */
-void mouseDragged() {
-    if(holdNodeID == -1)
-        return;
-    nodeMap.get(holdNodeID).movePos(mouseX-oldMouseX, mouseY-oldMouseY);
-    oldMouseX = mouseX;
-    oldMouseY = mouseY;
-}
-
-/* マウスが離された : 移動終了 */
-void mouseReleased() {
-    holdNodeID = -1;
-}
-
-/* 管理ノード追加 */
-void addNode(Node node) {
-    int key;
-    do {
-        key = (int)random(0, 1024);
-    } while(nodeMap.get(key) != null);
-    nodeMap.put(key, node);
 }
