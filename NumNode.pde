@@ -10,6 +10,7 @@ public class NumNode extends Node {
         this.setVal(val);
     }
 
+    @Override
     void draw() {
         // ノード本体(四角)
         fill(255);
