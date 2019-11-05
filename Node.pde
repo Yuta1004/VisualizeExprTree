@@ -61,19 +61,19 @@ public abstract class Node {
     private void checkSelectC(int x, int y) {
         int cx = pos.x + nWidth/2;
         int cy = pos.y;
-        this.selectC = abs(sq(x-cx) + sq(y-cy)) <= 5;
+        this.selectC = sqrt(sq(x-cx) + sq(y-cy)) <= 5;
     }
 
     private void checkSelectL(int x, int y) {
         int lcx = pos.x + nWidth/3;
         int lcy = pos.y + nHeight;
-        this.selectL = abs(sq(x-lcx) + sq(y-lcy)) <= 5;
+        this.selectL = sqrt(sq(x-lcx) + sq(y-lcy)) <= 5;
     }
 
     private void checkSelectR(int x, int y) {
         int rcx = pos.x + nWidth/3*2;
         int rcy = pos.y + nHeight;
-        this.selectL = abs(sq(x-rcx) + sq(y-rcy)) <= 5;
+        this.selectR = sqrt(sq(x-rcx) + sq(y-rcy)) <= 5;
     }
 
 }
