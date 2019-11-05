@@ -1,7 +1,11 @@
 void setup() {
-    size(1000, 800);
+    size(1200, 800);
 }
 
 void draw() {
     background(255);
+
+    // パレット
+    strokeWeight(3);
+    rect(820, 20, 360, 760);
 }
