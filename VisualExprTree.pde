@@ -1,8 +1,11 @@
-NumNode num = new NumNode(10);
+import java.util.HashMap;
+
+HashMap<Integer, Node> nodeMap;
 
 void setup() {
     size(1200, 800);
-    num.setPos(100, 200);
+
+    nodeMap = new HashMap<Integer, Node>();
 }
 
 void draw() {
@@ -13,5 +16,7 @@ void draw() {
     strokeWeight(3);
     rect(820, 20, 360, 760);
 
-    num.draw();
+    // ノード
+    for(int key : nodeMap.keySet())
+        nodeMap.get(key).draw();
 }
