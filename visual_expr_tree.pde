@@ -1,5 +1,6 @@
 import g4p_controls.*;
 import java.util.ArrayList;
+import java.awt.Font;
 
 static final int NCENTER = 8;
 static final int NLEFT = 4;
@@ -20,13 +21,14 @@ void setup() {
     rnode.setPos(350, 100);
     nodeList.add(rnode);
 
-    numForm = new GTextField(this, 850, 530, 300, 50);
+    numForm = new GTextField(this, 850, 530, 300, 30);
     GButton add = new GButton(this, 850, 50, 130, 100, "ADD");
     GButton sub = new GButton(this, 1020, 50, 130, 100, "SUB");
     GButton mul = new GButton(this, 850, 170, 130, 100, "MUL");
     GButton div = new GButton(this, 1020, 170, 130, 100, "DIV");
     GButton num = new GButton(this, 850, 290, 130, 100, "NUM");
     GButton check = new GButton(this, 850, 410, 300, 100, "CHECK");
+    numForm.setFont(new Font("Monaco", Font.PLAIN, 24));
     add.tag = "ADD";
     sub.tag = "SUB";
     mul.tag = "MUL";
