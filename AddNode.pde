@@ -7,8 +7,8 @@ public class AddNode extends Node {
     }
 
     int calc() {
-        if(left == null || right == null)
-            return 0;
+        int left = (left != null) ? left.calc() : 0;
+        int right = (right != null) ? right.calc() : 0;
         return left.calc() + right.calc();
     }
 
