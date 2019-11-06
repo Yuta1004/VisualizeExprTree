@@ -48,6 +48,15 @@ void draw() {
     // ノード
     for(Node node : nodeList)
         node.draw();
+
+    // ゴミ箱
+    fill(200);
+    strokeWeight(2);
+    rect(850, 600, 300, 150);
+    fill(0);
+    textAlign(CENTER, CENTER);
+    text("TRASH", 1000, 675);
+    textAlign(LEFT, LEFT);
 }
 
 /* mouse_func.pde */
