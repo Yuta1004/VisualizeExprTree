@@ -3,7 +3,7 @@ public abstract class Node {
     Pos pos;
     int val, nWidth, nHeight;
     boolean selectC, selectL, selectR;
-    Node left, right;
+    Node parent, left, right;
     String vname;
 
     public abstract int calc();
@@ -78,6 +78,10 @@ public abstract class Node {
         this.val = val;
     }
 
+    public void setParent(Node parent){
+        this.parent = parent;
+    }
+
     public void setLeft(Node left) {
         if(left != this)
             this.left = left;
@@ -106,11 +110,12 @@ public abstract class Node {
         this.selectR = false;
     }
 
-    public void reset() {
+    public void reset(int cnt) {
         this.val = 0;
-        this.pos = null;
         this.left = null;
         this.right = null;
+        if(this.parent != null && cnt > 0)
+            this.parent.reset(cnt-1);
     }
 
     private void checkSelectC(int x, int y) {

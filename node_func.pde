@@ -34,6 +34,7 @@ void chainNode(int newPressNodePl, int newPressNodeID) {
     // 親に殺を設定する
     Node parent = nodeList.get(oldPressNodeID);
     Node child = nodeList.get(newPressNodeID);
+    child.setParent(parent);
     parent.release();
     child.release();
     if((oldPressNodePl & NLEFT) == NLEFT)
