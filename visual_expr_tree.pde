@@ -8,6 +8,7 @@ static final int NBODY = 1;
 
 int holdNodeID, oldMouseX, oldMouseY, oldPressNodePl, oldPressNodeID;
 ArrayList<Node> nodeList;
+GTextField numForm;
 
 void setup() {
     frameRate(25);
@@ -19,6 +20,7 @@ void setup() {
     rnode.setPos(350, 100);
     nodeList.add(rnode);
 
+    numForm = new GTextField(this, 850, 530, 300, 50);
     GButton add = new GButton(this, 850, 50, 130, 100, "ADD");
     GButton sub = new GButton(this, 1020, 50, 130, 100, "SUB");
     GButton mul = new GButton(this, 850, 170, 130, 100, "MUL");

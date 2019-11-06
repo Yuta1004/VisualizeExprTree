@@ -39,3 +39,6 @@ public void handleButtonEvents(GButton button, GEvent event) {
     node.setPos(400, 400);
     addNode(node);
 }
+
+// テキストフィールドハンドラ
+public void handleTextEvents(GEditableTextControl textcontrol, GEvent event) {}
