@@ -12,3 +12,7 @@
 ## 実行
 
 実行前にディレクトリ名を **VisualizeExprTree** から **visual_expr_tree** に変えてください
+
+## 動作画面
+
+![Imgur](https://i.imgur.com/mYppWBp.png)
