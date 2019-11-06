@@ -21,14 +21,16 @@ void setup() {
     rnode.setPos(350, 100);
     nodeList.add(rnode);
 
-    numForm = new GTextField(this, 850, 530, 300, 30);
+    numForm = new GTextField(this, 1020, 325, 130, 30);
+    numForm.setFont(new Font("Monaco", Font.PLAIN, 24));
+    numForm.setText("10");
+
     GButton add = new GButton(this, 850, 50, 130, 100, "ADD");
     GButton sub = new GButton(this, 1020, 50, 130, 100, "SUB");
     GButton mul = new GButton(this, 850, 170, 130, 100, "MUL");
     GButton div = new GButton(this, 1020, 170, 130, 100, "DIV");
     GButton num = new GButton(this, 850, 290, 130, 100, "NUM");
     GButton check = new GButton(this, 850, 410, 300, 100, "CHECK");
-    numForm.setFont(new Font("Monaco", Font.PLAIN, 24));
     add.tag = "ADD";
     sub.tag = "SUB";
     mul.tag = "MUL";
