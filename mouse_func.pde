@@ -35,5 +35,7 @@ void mouseDragged() {
 }
 
 void mouseReleased() {
+    if(850 <= mouseX && mouseX <= 1150 && 600 <= mouseY && mouseY <= 750)
+        nodeList.remove(holdNodeID);
     holdNodeID = -1;
 }
