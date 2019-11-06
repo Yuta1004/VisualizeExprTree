@@ -28,7 +28,7 @@ public void handleButtonEvents(GButton button, GEvent event) {
         break;
 
     case "NUM":
-        node = new NumNode(10);
+        node = new NumNode(int(numForm.getText()));
         break;
 
     case "CHECK":
