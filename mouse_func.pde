@@ -1,13 +1,12 @@
 void mousePressed() {
     // 今回押した場所を特定
-    int newPressNodePl = 0, newPressNodeID = 0, idx = 0;
-    for(Node node : nodeList) {
-        newPressNodePl = node.click(mouseX, mouseY);
+    int newPressNodePl = 0, newPressNodeID = 0;
+    for(int id = nodeList.size()-1; 0 <= id ; -- id) {
+        newPressNodePl = nodeList.get(id).click(mouseX, mouseY);
         if(newPressNodePl > 0){
-            newPressNodeID = idx;
+            newPressNodeID = id;
             break;
         }
-        ++ idx;
     }
     oldMouseX = mouseX;
     oldMouseY = mouseY;
