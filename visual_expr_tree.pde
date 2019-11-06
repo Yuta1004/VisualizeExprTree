@@ -7,7 +7,7 @@ static final int NLEFT = 4;
 static final int NRIGHT = 2;
 static final int NBODY = 1;
 
-int holdNodeID, oldMouseX, oldMouseY, oldPressNodePl, oldPressNodeID;
+int holdNodeID, oldMouseX, oldMouseY, oldPressNodePl, oldPressNodeID, calcResult;
 ArrayList<Node> nodeList;
 GTextField numForm;
 
@@ -15,6 +15,7 @@ void setup() {
     frameRate(25);
     size(1200, 800);
 
+    calcResult = 0;
     holdNodeID = -1;
     nodeList = new ArrayList<Node>();
     RootNode rnode = new RootNode();
@@ -60,6 +61,11 @@ void draw() {
     for(Node node : nodeList)
         node.draw();
 
+    // 計算結果
+    textAlign(CENTER, CENTER);
+    textSize(24);
+    text("out = "+calcResult, 1000, 550);
+    textAlign(LEFT, LEFT);
 }
 
 /* mouse_func.pde */

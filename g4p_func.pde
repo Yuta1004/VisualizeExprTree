@@ -32,7 +32,7 @@ public void handleButtonEvents(GButton button, GEvent event) {
         break;
 
     case "CHECK":
-        println(nodeList.get(0).calc());
+        calcResult = nodeList.get(0).calc();
         return;
     }
 
