@@ -28,8 +28,12 @@ public void handleButtonEvents(GButton button, GEvent event) {
         break;
 
     case "NUM":
-        node = new NumNode(10);;;;
+        node = new NumNode(10);
         break;
+
+    case "CHECK":
+        println(nodeList.get(0).calc());
+        return;
     }
 
     node.setPos(400, 400);
