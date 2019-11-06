@@ -7,8 +7,8 @@ public class DivNode extends Node {
     }
 
     int calc() {
-        int left = (left != null) ? left.calc() : 0;
-        int right = (right != null) ? right.calc() : 0;
-        return left.calc() / right.calc();
+        int leftVal = (left != null) ? left.calc() : 0;
+        int rightVal = (right != null) ? right.calc() : 0;
+        return leftVal / rightVal;
     }
 }
