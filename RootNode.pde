@@ -33,7 +33,9 @@ public class RootNode extends Node {
     }
 
     int calc() {
-        return val;
+        if(left == null)
+            return 0;
+        return left.calc();
     }
 
 }
