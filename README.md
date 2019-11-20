@@ -13,6 +13,11 @@
 
 実行前にディレクトリ名を **VisualizeExprTree** から **visual_expr_tree** に変えてください
 
+```
+// processing-java がインストールされている場合
+make
+```
+
 ## 動作画面
 
 ![Imgur](https://i.imgur.com/mYppWBp.png)
